@@ -1,50 +1,88 @@
 #include <stdio.h>
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
+#include <string.h>
 
-    char estado;
+int main(){
     char codigoCarta[3];
+    char estado[50];
     char nomeCidade[50];
     int populacao;
     float area;
     float pib;
     int pontosTuristicos;
 
-int main() {
-    //jogo 
-    printf("------------Super Trunfo------------\n");
-    printf("Vamos começar! Cadastre sua carta\n");
+    printf("Cadastre a Carta 1:\n");
+    printf("Digite o Estado:"); //entrada de dados pelo usuário
+    scanf("%s", estado); // captura do que foi informado
 
-    printf("Digite o Estado (A-H):"); //entrada de dados pelo usuário
-    scanf("%c"); // captura do que foi informado
-    printf("\nDigite o código da carta:"); //entrada de dados pelo usuário
-    scanf("%s"); // captura do que foi informado
+    printf("Digite o código da carta:");
+    scanf("%s", codigoCarta);
 
-    printf("\nDigite o nome da cidade:"); //entrada de dados pelo usuário
-    scanf("%s"); // captura do que foi informado
+    printf("Digite o nome da cidade:");
+    getchar(); // Limpa o buffer antes de fgets
+    fgets(nomeCidade, sizeof(nomeCidade), stdin); // Usa fgets para strings com espaço
+    nomeCidade[strcspn(nomeCidade, "\n")] = '\0'; // Remove a quebra de linha do nome
 
-    printf("\nDigite a população:"); //entrada de dados pelo usuário
-    scanf("%d"); // captura do que foi informado
+    printf("Digite a população:");
+    scanf("%d", &populacao);
 
-    printf("\nDigite a área (km²):"); //entrada de dados pelo usuário
-    scanf("%f"); // captura do que foi informado
+    printf("Digite a área (km²):");
+    scanf("%f", &area);
+    getchar();
 
-    printf("\nDigite o PIB:"); //entrada de dados pelo usuário
-    scanf("%f"); // captura do que foi informado
+    printf("Digite o PIB:");
+    scanf("%f", &pib);
+    getchar();
 
-    printf("\nDigite o número de pontos turísticos:"); //entrada de dados pelo usuário
-    scanf("%i");  // captura do que foi informado
-    
-    printf("* Carta cadastrada com sucesso! *\n"); //confirmação após carta ser cadastrada com sucesso
-    
-    printf("Esta é a carta:\n"); //Exibição dos Dados das Cartas
-    printf("Estado: %c\n", &estado);
-    printf("Código da Carta: %s\n", &codigoCarta);
-    printf("Nome da Cidade: %s\n", &nomeCidade);
-    printf("População: %d\n", &populacao);
-    printf("Área: %f\n", &area, "km²");
-    printf("PIB: %f\n", &pib);
-    printf("Número de Pontos Turísticos: %i\n", &pontosTuristicos);
+    printf("Digite o número de pontos turísticos:");
+    scanf("%d", &pontosTuristicos);
 
+    printf("* Carta cadastrada com sucesso! *\n"); //confirmação após carta ser cadastrada
+    printf("Carta 1:\n"); //apresentação da carta
+    printf("Estado: %s\n", estado);
+    printf("Código: %s\n", codigoCarta);
+    printf("Nome da Cidade: %s\n", nomeCidade);
+    printf("População: %d\n", populacao);
+    printf("Área: %.2f km²\n", area);
+    printf("PIB: %.2f\n", pib);
+    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos);
+
+    printf("--------------------------------------------\n");
+
+    printf("Cadastre a Carta 2:\n"); // cadastro da segunda carta
+    printf("Digite o Estado:");
+    scanf(" %s", estado);
+
+    printf("Digite o código da carta:");
+    scanf("%s", codigoCarta);
+
+    printf("Digite o nome da cidade:");
+    getchar();
+    fgets(nomeCidade, sizeof(nomeCidade), stdin);
+    nomeCidade[strcspn(nomeCidade, "\n")] = '\0'; 
+
+    printf("Digite a população:");
+    scanf("%d", &populacao);
+
+    printf("Digite a área (km²):");
+    scanf("%f", &area);
+    getchar();
+
+    printf("Digite o PIB:");
+    scanf("%f", &pib);
+    getchar();
+
+    printf("Digite o número de pontos turísticos:");
+    scanf("%d", &pontosTuristicos);
+
+    printf("* Carta cadastrada com sucesso! *\n");
+    printf("Carta 2:\n");
+    printf("Estado: %s\n", estado);
+    printf("Código: %s\n", codigoCarta);
+    printf("Nome da Cidade: %s\n", nomeCidade);
+    printf("População: %d\n", populacao);
+    printf("Área: %.2f km²\n", area);
+    printf("PIB: %.2f\n", pib);
+    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos);
     return 0;
+
 }
